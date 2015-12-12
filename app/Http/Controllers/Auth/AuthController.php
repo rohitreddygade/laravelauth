@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace mybookstack\Http\Controllers\Auth;
 
-use App\User;
+use mybookstack\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use mybookstack\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

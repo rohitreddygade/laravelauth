@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: mybookstack
+        psr4_prefix: mybookstack
         src_path: app

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace mybookstack\Events;
 
 abstract class Event
 {
