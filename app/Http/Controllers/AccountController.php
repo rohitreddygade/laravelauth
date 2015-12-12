@@ -49,7 +49,7 @@ class AccountController extends Controller
        if($emailcode[1] == $user->code)
        {
          DB::table('users')->where('email', '=', $emailcode[0])->update(['code' => '','active' => '1']);
-         return 'your account is succesfully activated ';
+         return redirect('home');
        }
        else {
         return abort(404);
@@ -63,7 +63,7 @@ class AccountController extends Controller
          $password = Input::get('password');
        if (Auth::attempt(['email' => $email, 'password' => $password,'active'=>1],$remember)) {
 
-         return'Your are successfully  Login';
+         return redirect('/home');;
        }
        return "Please Activate your account  a mail is sended to you mail ";
     }

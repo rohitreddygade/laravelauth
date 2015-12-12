@@ -1,16 +1,28 @@
 <?php
-Route::get('/', function () {
-    return view('welcome');
-});
+
 //Users Routes
-Route::group(['prefix'=>'user'],function()
+Route::group(['middleware'=>'guest'],function()
 {
-  Route::get('/sinup', function(){return view('account.sinup');} );
-  Route::post('/sinup' ,['uses'=>'AccountController@postsinup', 'as'=>'sinup']);
-
-  Route::get('/sinin', function(){return view('account.sinin');} );
-  Route::post('/sinin' ,['uses'=>'AccountController@postsinin', 'as'=>'sinin']);
-  Route::get('/activate/{code}','AccountController@activate');
-
-}
-);
+  Route::get('/', function () {
+      return view('welcome');
+  });
+  Route::group(['prefix'=>'user'],function()
+  {
+    Route::get('/sinup', function(){return view('account.sinup');} );
+    Route::get('/login', function(){return view('account.sinin');} );
+    Route::get('/activate/{code}','AccountController@activate');
+    Route::post('/sinup' ,['uses'=>'AccountController@postsinup', 'as'=>'sinup']);
+    Route::post('/login' ,['uses'=>'AccountController@postsinin', 'as'=>'sinin']);
+  });
+});
+//Login Routes.
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', function (){
+      return view('users.index') ;
+    });
+    Route::get('/user/logout',function(){
+      Auth::logout();
+      return redirect('user/login');
+    });
+  }
+  );

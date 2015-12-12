@@ -16,8 +16,8 @@ Register Form
       <label for="password"> Password: </label>
       <input type="password" name="password" id="register_password" /><br>
       <input type="checkbox" id="remember" name="remember"  checked >
-			<label for="remember">Please Remember</label>
-      <input type="hidden" name="_token" value="{{csrf_token()}}">
-      <input type="submit" value='submit'/>
+			<label for="remember">Please Remember</label><br>
+      <input type="hidden" name="_token" value="{{csrf_token()}}"><br>
+      <input  id="gobutton" type="submit" value='Login'/>
  </form>
 @endsection

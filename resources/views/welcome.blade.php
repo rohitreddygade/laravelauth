@@ -1,45 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.main')
+@section('title')
+mybookrack
+@endsection
+@section('content')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
+              <div class="home">
                 <div class="title">Home Page</div>
-            </div>
-        </div>
-    </body>
-</html>
+                <h2><a href="{{URL::route('sinup')}}">SinUp</a>&nbsp;&nbsp;
+                <a href="{{URL::route('sinin')}}">SinIn</a></h2>
+              </div>
+              
+@endsection

@@ -22,9 +22,9 @@ Register Form
       <label for="password"> Password: </label>
       <input type="password" name="password" id="register_password" /><br>
 
-      <label for="Password_confirmation"> password confirmation: </label>
-      <input type="password" name=" password_again" id="password_confirmation" /><br>
+      <label for="Password_confirmation"> Password : </label>
+      <input type="password" name=" password_again" id="password_confirmation" /><br><br>
       <input type="hidden" name="_token" value="{{csrf_token()}}">
-      <input type="submit" value='submit'/>
+      <input  id="gobutton" type="submit" value='Create'/>
  </form>
 @endsection
